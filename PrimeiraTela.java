@@ -22,7 +22,7 @@ public class PrimeiraTela  extends JFrame{
     public PrimeiraTela(){
         // Criando componentes
         painel = getContentPane();
-        layout =  new GridLayout(5, 2, 0, 3); //(rows, cols, gapcols, gapRows)
+        layout =  new GridLayout(6, 1, 0, 3); //(rows, cols, gapcols, gapRows)
         
         // COMPONENTES EM SI
         txtUsuario = new JLabel("Usuário");
@@ -31,21 +31,27 @@ public class PrimeiraTela  extends JFrame{
         inputSenha = new JPasswordField();
         botaoEnviar = new JButton("Entrar");
         // LAYOUT
-    
+        
+
+
         ((JComponent) painel).setBorder(new EmptyBorder(15,15,15,15));
         
         // Configurações padrões da tela
-        setSize(300, 200);
+        setSize(300, 250);
         setTitle("Login");
         setVisible(true);
+        setResizable(false);
         painel.setLayout(layout);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        
         // Adicionando componentes
         painel.add(txtUsuario);
         painel.add(inputUsuario);
         painel.add(txtSenha);
         painel.add(inputSenha);
+        painel.add(new JLabel(""));
         painel.add(botaoEnviar);
+        
     }
 }
