@@ -6,10 +6,11 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-
 import java.awt.Container;
+import java.awt.Font;
 
-public class PrimeiraTela  extends JFrame{
+
+public class TelaLogin  extends JFrame{
     private JLabel txtUsuario;
     private JTextField inputUsuario;
     private JButton botaoEnviar;
@@ -19,8 +20,9 @@ public class PrimeiraTela  extends JFrame{
     private JPasswordField inputSenha;
      
 
-    public PrimeiraTela(){
-        // Criando componentes
+    public TelaLogin(){
+
+        // LAYOUT E PAINEL
         painel = getContentPane();
         layout =  new GridLayout(6, 1, 0, 3); //(rows, cols, gapcols, gapRows)
         
@@ -30,10 +32,13 @@ public class PrimeiraTela  extends JFrame{
         txtSenha = new JLabel("Senha");
         inputSenha = new JPasswordField();
         botaoEnviar = new JButton("Entrar");
-        // LAYOUT
-        
 
+        // FONTE
+        Font fonte = new Font("Monospace", Font.BOLD, 12);
+        txtUsuario.setFont(fonte);
+        txtSenha.setFont(fonte);
 
+        // PADDINGS
         ((JComponent) painel).setBorder(new EmptyBorder(15,15,15,15));
         
         // Configurações padrões da tela
@@ -43,7 +48,6 @@ public class PrimeiraTela  extends JFrame{
         setResizable(false);
         painel.setLayout(layout);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         
         // Adicionando componentes
         painel.add(txtUsuario);
